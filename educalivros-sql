@@ -74,7 +74,7 @@ CREATE TABLE Categoria (
 
 CREATE TABLE Avaliacao (
     ID CHAR PRIMARY KEY,
-    Tipo CHARACTER,
+    Nome CHARACTER,
     Data DATE,
     Comentarios VARCHAR,
     Nota FLOAT
@@ -203,12 +203,12 @@ INSERT INTO Categoria (ID, Nome, Descricao, Numero_de_livros, Numero_de_livros_v
 ('CAT004', 'Suspense', 'Livros que criam tensão e mistério', 15, 15),
 ('CAT005', 'Autoajuda', 'Livros que oferecem conselhos e orientações para a vida', 10, 16);
 
-INSERT INTO Avaliacao (ID, Tipo, Data, Comentarios, Nota) VALUES
-('AVL001', 'Livro', '2024-04-25', 'Ótimo livro, recomendo!', 4.5),
-('AVL002', 'Filme', '2024-04-20', 'Muito bom, adorei a trama!', 4.2),
-('AVL003', 'Restaurante', '2024-04-18', 'Comida deliciosa e ambiente agradável.', 4.8),
-('AVL004', 'Produto', '2024-04-15', 'Atendeu às minhas expectativas.', 4.0),
-('AVL005', 'Serviço', '2024-04-10', 'Eficiente e rápido.', 4.7);
+INSERT INTO Avaliacao (ID, Nome, Data, Comentarios, Nota) VALUES
+('AVL001', 'Senhor dos Aneis', '2024-04-25', 'Ótimo livro, recomendo!', 4.5),
+('AVL002', 'Star Wars', '2024-04-20', 'Muito bom, adorei a trama!', 4.2),
+('AVL003', 'Harry Potter', '2024-04-18', 'Minha magia favorita é Avada Kedavra', 4.8),
+('AVL004', 'Jujutsu Kaisen', '2024-04-15', 'O Go/jo vai voltar', 4.9),
+('AVL005', 'Haikyu', '2024-04-10', 'Melhor anime de Esportes', 4.7);
 
 INSERT INTO Pedido (Numero, Data, status, Cartao, Dinheiro, Valor, Produto, fk_Usuario_CPF) VALUES
 (1001, '2024-04-25', 'Entregue', '1234 5678 9012 3456', NULL, 50.00, 'Livro', '12345678901'),
