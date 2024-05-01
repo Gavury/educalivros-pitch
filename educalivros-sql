@@ -2,9 +2,10 @@
 
 CREATE TABLE Usuario (
     Endereco VARCHAR,
-    CPF CHAR PRIMARY KEY,
-    fk_Plano_Premium_CPF CHAR, 
-    fk_Avaliacao_ID Char
+    CPF CHAR PRIMARY KEY, 
+    fk_Avaliacao_ID VARCHAR
+    fk_Plano_Premium_CPF CHAR 
+    
 );
 
 CREATE TABLE Professor (
@@ -65,8 +66,9 @@ CREATE TABLE Categoria (
     ID CHAR PRIMARY KEY,
     Nome VARCHAR,
     Descricao VARCHAR,
-    Numero_de_livros SMALLINT, 
+    Numero_de_livros SMALLINT,
     Numero_de_livros_vendidos SMALLINT
+    
 );
 
 CREATE TABLE Avaliacao (
@@ -96,8 +98,10 @@ CREATE TABLE Plano_Premium (
 CREATE TABLE Material_Escolar (
     Caderno FLOAT,
     Bolsa FLOAT,
-    Codigo_Barra CHAR,
-    fk_Produto_ID CHAR,
+    Codigo_Barra CHAR, 
+    Caderno_vendido SMALLINT, 
+    Bolsa_vendida SMALLINT,
+    fk_Produto_ID CHAR, 
     PRIMARY KEY (Codigo_Barra, fk_Produto_ID)
 );
 
@@ -130,7 +134,7 @@ CREATE TABLE obtem (
 CREATE TABLE recebe (
     fk_Avaliacao_ID CHAR,
     fk_Livro_ISBN CHAR, 
-    fk_Produto_ID CHAR
+    fk_Livro_fk_Produto_ID Char
 );
  
 
@@ -192,10 +196,10 @@ INSERT INTO Editora (Codigo, Nome, Endereco, E_mail) VALUES
 
 INSERT INTO Categoria (ID, Nome, Descricao, Numero_de_livros, Numero_de_livros_vendidos) VALUES
 ('CAT001', 'Ficção Científica', 'Livros sobre viagens no tempo, universos alternativos, etc.', 20, 74),
-('CAT002', 'Romance', 'Livros sobre histórias de amor e relacionamentos', 30, 22),
-('CAT003', 'Fantasia', 'Livros sobre mundos imaginários, magia, etc.', 25, 26),
-('CAT004', 'Suspense', 'Livros que criam tensão e mistério', 15, 10),
-('CAT005', 'Autoajuda', 'Livros que oferecem conselhos e orientações para a vida', 10, 15);
+('CAT002', 'Romance', 'Livros sobre histórias de amor e relacionamentos', 30, 10),
+('CAT003', 'Fantasia', 'Livros sobre mundos imaginários, magia, etc.', 25, 12),
+('CAT004', 'Suspense', 'Livros que criam tensão e mistério', 15, 15),
+('CAT005', 'Autoajuda', 'Livros que oferecem conselhos e orientações para a vida', 10, 16);
 
 INSERT INTO Avaliacao (ID, Tipo, Data, Comentarios, Nota) VALUES
 ('AVL001', 'Livro', '2024-04-25', 'Ótimo livro, recomendo!', 4.5),
@@ -214,12 +218,12 @@ INSERT INTO Pedido (Numero, Data, status, Cartao, Dinheiro, Valor, Produto, fk_U
 INSERT INTO Plano_Premium (desconto) VALUES
 (0.15);
 
-INSERT INTO Material_Escolar (Caderno, Bolsa, fk_Produto_ID) VALUES
-(12.50, 20.00, 'PRO001'),
-(15.00, 25.00, 'PRO002'),
-(10.75, 18.50, 'PRO003'),
-(18.20, 30.00, 'PRO004'),
-(22.50, 35.50, 'PRO005');
+INSERT INTO Material_Escolar (Caderno, Bolsa, Codigo_Barra,Caderno_vendido, Bolsa_vendida, fk_Produto_ID) VALUES
+(12.50, 20.00,'456545458',25 ,21 , 'PRO001'),
+(15.00, 25.00,'12345678',12 ,45 ,'PRO002'),
+(10.75, 18.50,'7418529',32 ,45 , 'PRO003'),
+(18.20, 30.00,'85245695',56 ,89 ,'PRO004'),
+(22.50, 35.50,'15975385',21 ,78 , 'PRO005');
 
 INSERT INTO Produto (ID) VALUES
 ('PRO001'),
@@ -242,7 +246,7 @@ INSERT INTO pertence (fk_Categoria_ID, fk_Livro_ISBN, fk_Livro_fk_Produto_ID) VA
 ('CAT004', '978-0451524935', 'LIV004'),
 ('CAT005', '978-1983397910', 'LIV005');
 
-INSERT INTO recebe (fk_Avaliacao_ID, fk_Livro_ISBN, fk_Produto_ID) VALUES
+INSERT INTO recebe (fk_Avaliacao_ID, fk_Livro_ISBN, fk_Livro_fk_Produto_ID) VALUES
 ('AVL001', '978-0142420591', 'LIV001'),
 ('AVL002', '978-0553212457', 'LIV002'),
 ('AVL003', '978-0486280615', 'LIV003'),
@@ -256,12 +260,3 @@ INSERT INTO obtem (fk_Produto_ID) VALUES
 ('PRO004'),
 ('PRO005'); 
 
-Delete from Pedido where status like'%Pendente%';  
-
-Update Autor set P_Nome='George' where P_Nome like '%Georgeton%'; 
-Update Autor set P_Nome='Hermando' where P_Nome like '%Herman%';  
-Update Autor set P_Nome='Michael' where P_Nome like '%Miguel%';  
-
-Delete from Livro where fk_Editora_E_mail like '%gmail%'; 
-
-Delete from Aluno where _CR__coeficiente_de_rendimento<7;
