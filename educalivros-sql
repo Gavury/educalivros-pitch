@@ -51,7 +51,8 @@ CREATE TABLE Entrega (
 
 CREATE TABLE Autor (
     P_Nome VARCHAR,
-    S_Nome VARCHAR
+    S_Nome VARCHAR, 
+    Numero_de_Vendas SMALLINT
 );
 
 CREATE TABLE Editora (
@@ -107,7 +108,8 @@ CREATE TABLE Material_Escolar (
 
 CREATE TABLE Produto (
     ID CHAR PRIMARY KEY,
-    Nome VARCHAR
+    Nome VARCHAR, 
+    Numero_de_Vendas SMALLINT
 );
 
 CREATE TABLE faz (
@@ -180,12 +182,12 @@ INSERT INTO Entrega (Frete, Status, Endereco) VALUES
 (15.80, 'Entregue', 'Avenida W, 654'),
 (9.99, 'Pendente', 'Rua V, 321');
 
-INSERT INTO Autor (P_Nome, S_Nome) VALUES
-('George', 'Orwell'),
-('Herman', 'Melville'),
-('William', 'Shakespeare'),
-('Miguel', 'de Cervantes'),
-('Fyodor', 'Dostoevsky');
+INSERT INTO Autor (P_Nome, S_Nome, Numero_de_Vendas) VALUES
+('George', 'Orwell', 12),
+('Herman', 'Melville', 58),
+('William', 'Shakespeare', 63),
+('Miguel', 'de Cervantes', 23),
+('Fyodor', 'Dostoevsky', 13);
 
 INSERT INTO Editora (Codigo, Nome, Endereco, E_mail) VALUES
 ('EDI001', 'Penguin Books', '123 Penguin Street', 'penguin@example.com'),
@@ -225,12 +227,12 @@ INSERT INTO Material_Escolar (Caderno, Bolsa, Codigo_Barra,Caderno_vendido, Bols
 (18.20, 30.00,'85245695',56 ,89 ,'PRO004'),
 (22.50, 35.50,'15975385',21 ,78 , 'PRO005');
 
-INSERT INTO Produto (ID) VALUES
-('PRO001'),
-('PRO002'),
-('PRO003'),
-('PRO004'),
-('PRO005');
+INSERT INTO Produto (ID, Nome,Numero_de_Vendas ) VALUES
+('PRO001', 'Caderno Tempestade', 74),
+('PRO002', 'Caderno Wolverine', 32 ),
+('PRO003', 'Caderno Deadpool', 69),
+('PRO004', 'Caderno Ciclope', 36),
+('PRO005', 'Caderno Gambit', 22);
 
 INSERT INTO escrito (fk_Livro_ISBN, fk_Livro_fk_Produto_ID) VALUES
 ('978-0142420591', 'LIV001'),
@@ -259,4 +261,3 @@ INSERT INTO obtem (fk_Produto_ID) VALUES
 ('PRO003'),
 ('PRO004'),
 ('PRO005'); 
-
