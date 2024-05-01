@@ -12,10 +12,26 @@ A EducaLivros é uma livraria online especializada em vender livros e material e
 
 ## Tomada de decisão
 - Qual categoria de livro vende mais?
+
+- ![Livros](https://github.com/Gavury/educalivros-pitch/assets/99884688/76629c81-a45b-4924-bdfe-872744384355)
+
 - Qual tipo de material escolar vende mais? Bolsa ou caderno?
+
+![Material escolar](https://github.com/Gavury/educalivros-pitch/assets/99884688/bba12565-8a2c-423e-8d3e-af409abfb7cd)
+
+ 
 - Qual autor vende mais?
+![Captura de tela 2024-05-01 181759](https://github.com/Gavury/educalivros-pitch/assets/99884688/ea818315-9a7d-4fd1-9e89-ccc73dbbb70d)
+
+- 
 - Qual produto é o mais pedido?
+
+- ![Caderno X-men](https://github.com/Gavury/educalivros-pitch/assets/99884688/dea31981-3275-4238-815d-7aaf32cd487b)
+
 - Qual é o livro mais bem avaliado?
+
+- ![Captura de tela 2024-05-01 182051](https://github.com/Gavury/educalivros-pitch/assets/99884688/ec54a8da-8190-4287-9ac3-e8025f88f005)
+
 
 ## Easter egg
 Ao assinar o Plano Premium, o usuário recebe desconto em todos os produtos do site EducaLivros. 
