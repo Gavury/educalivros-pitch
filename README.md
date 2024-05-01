@@ -18,7 +18,8 @@ A EducaLivros é uma livraria online especializada em vender livros e material e
 - Qual é o livro mais bem avaliado?
 
 ## Easter egg
-Ao assinar o Plano Premium, o usuário recebe desconto em todos os produtos do site EducaLivros.
+Ao assinar o Plano Premium, o usuário recebe desconto em todos os produtos do site EducaLivros. 
+Desconto Aluno para o plano premium, como se fosse um desconto universitario
 
 ## MER - Modelo Entidade-Relacionamento
 ![Captura de tela 2024-05-01 162602](https://github.com/vitoria74/educalivros-bd/assets/99884688/39df59ad-7b15-4888-a9bd-f5367e7955c2)
