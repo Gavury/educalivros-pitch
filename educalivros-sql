@@ -3,7 +3,8 @@
 CREATE TABLE Usuario (
     Endereco VARCHAR,
     CPF CHAR PRIMARY KEY,
-    fk_Plano_Premium_CPF CHAR
+    fk_Plano_Premium_CPF CHAR, 
+    fk_Avaliacao_ID Char
 );
 
 CREATE TABLE Professor (
@@ -64,7 +65,8 @@ CREATE TABLE Categoria (
     ID CHAR PRIMARY KEY,
     Nome VARCHAR,
     Descricao VARCHAR,
-    Numero_de_livros SMALLINT
+    Numero_de_livros SMALLINT, 
+    Numero_de_livros_vendidos SMALLINT
 );
 
 CREATE TABLE Avaliacao (
@@ -127,6 +129,7 @@ CREATE TABLE obtem (
 
 CREATE TABLE recebe (
     fk_Avaliacao_ID CHAR,
+    fk_Livro_ISBN CHAR, 
     fk_Produto_ID CHAR
 );
  
@@ -187,12 +190,12 @@ INSERT INTO Editora (Codigo, Nome, Endereco, E_mail) VALUES
 ('EDI004', 'Signet', '321 Signet Road', 'signet@example.com'),
 ('EDI005', 'Independently published', '654 Independent Street', 'independent@example.com');
 
-INSERT INTO Categoria (ID, Nome, Descricao, Numero_de_livros) VALUES
-('CAT001', 'Ficção Científica', 'Livros sobre viagens no tempo, universos alternativos, etc.', 20),
-('CAT002', 'Romance', 'Livros sobre histórias de amor e relacionamentos', 30),
-('CAT003', 'Fantasia', 'Livros sobre mundos imaginários, magia, etc.', 25),
-('CAT004', 'Suspense', 'Livros que criam tensão e mistério', 15),
-('CAT005', 'Autoajuda', 'Livros que oferecem conselhos e orientações para a vida', 10);
+INSERT INTO Categoria (ID, Nome, Descricao, Numero_de_livros, Numero_de_livros_vendidos) VALUES
+('CAT001', 'Ficção Científica', 'Livros sobre viagens no tempo, universos alternativos, etc.', 20, 74),
+('CAT002', 'Romance', 'Livros sobre histórias de amor e relacionamentos', 30, 22),
+('CAT003', 'Fantasia', 'Livros sobre mundos imaginários, magia, etc.', 25, 26),
+('CAT004', 'Suspense', 'Livros que criam tensão e mistério', 15, 10),
+('CAT005', 'Autoajuda', 'Livros que oferecem conselhos e orientações para a vida', 10, 15);
 
 INSERT INTO Avaliacao (ID, Tipo, Data, Comentarios, Nota) VALUES
 ('AVL001', 'Livro', '2024-04-25', 'Ótimo livro, recomendo!', 4.5),
@@ -239,7 +242,7 @@ INSERT INTO pertence (fk_Categoria_ID, fk_Livro_ISBN, fk_Livro_fk_Produto_ID) VA
 ('CAT004', '978-0451524935', 'LIV004'),
 ('CAT005', '978-1983397910', 'LIV005');
 
-INSERT INTO recebe (fk_Avaliacao_ID, fk_Livro_ISBN, fk_Livro_fk_Produto_ID) VALUES
+INSERT INTO recebe (fk_Avaliacao_ID, fk_Livro_ISBN, fk_Produto_ID) VALUES
 ('AVL001', '978-0142420591', 'LIV001'),
 ('AVL002', '978-0553212457', 'LIV002'),
 ('AVL003', '978-0486280615', 'LIV003'),
