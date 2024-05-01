@@ -37,11 +37,13 @@ Ao assinar o Plano Premium, o usuário recebe desconto em todos os produtos do s
 Desconto Aluno para o plano premium, como se fosse um desconto universitario
 
 ## MER - Modelo Entidade-Relacionamento
-![Captura de tela 2024-05-01 162602](https://github.com/vitoria74/educalivros-bd/assets/99884688/39df59ad-7b15-4888-a9bd-f5367e7955c2)
+![Mer](https://github.com/Gavury/educalivros-pitch/assets/99884688/d58b4af4-9f4d-486a-b581-6b30b2641eac)
+
 
 
 ## Modelo lógico
-![logicowdceqwopfqwa](https://github.com/vitoria74/educalivros-bd/assets/99884688/341ed5c2-f472-4daa-b418-dcef30f6e24e)
+
+![Logico](https://github.com/Gavury/educalivros-pitch/assets/99884688/e2edbbb8-18d8-4a8d-af0f-a758f32631dd)
 
 
 
